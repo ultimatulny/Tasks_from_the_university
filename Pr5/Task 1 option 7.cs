@@ -8,8 +8,9 @@ namespace Mycode
         public static void Main(string[] args)
         {
             int n = System.Convert.ToInt32(Console.ReadLine()); // Задаем размер массива
+            double sum = 0; // Суммирование всех элементов
+            double mult = 1; // Перемножение всех элементов
             int[] x = new int[n]; // Создаем массив
-            int check = 0;
 
             for (int i = 0; i < n; i++) // Заполняем массив
             {
@@ -17,22 +18,19 @@ namespace Mycode
                 x[i] = System.Convert.ToInt32(Console.ReadLine());
             }
 
-            for (int i = 0; i < n-1; i++) // Проверяем порядок, если все элементы упорядочены по убыванию, то check == n-1
+            for (int i = 0; i < n; i++) // Суммируем все элементы
             {
-                if (x[i] > x[i+1])
-                {
-                    check++;
-                }
+                sum += x[i];
             }
 
-            if (check == n - 1) 
+            for (int i = 0; i < n; i++) // Перемножаем все элементы
             {
-                Console.WriteLine("True");
+                mult *= x[i];
             }
-            else
-            {
-                Console.WriteLine("False");
-            }
+
+            double result = sum / mult; // находим результат 
+
+            Console.WriteLine(result);
 
         }
 
