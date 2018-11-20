@@ -50,8 +50,6 @@ namespace Limerence
                 Console.WriteLine("N > 100 !");
             }
 
-
-
         }
 
 
