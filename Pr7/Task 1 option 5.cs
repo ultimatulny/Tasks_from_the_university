@@ -1,6 +1,6 @@
 using System;
 
-namespace Limerence
+namespace Program
 {
     class Program
     {
