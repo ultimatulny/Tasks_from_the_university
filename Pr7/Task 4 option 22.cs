@@ -69,8 +69,5 @@ namespace Limerence
             int num = System.Convert.ToInt32(Console.ReadLine());
             msv(Massive, num);
         }
-
-
-
     }
 }
