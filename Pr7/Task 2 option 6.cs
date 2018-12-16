@@ -28,7 +28,7 @@ namespace ProgramMax
             {
                 for (int j = 0; j < mass.GetLength(0); j++)
                 {
-                    Console.Write(mass[i, j]);
+                    Console.Write(String.Format("{0,3}", mass[i, j]));
                 }
                 Console.WriteLine();
             }
@@ -55,7 +55,7 @@ namespace ProgramMax
             {
                 for (int j = 0; j < q; j++)
                 {
-                    Massive[i, j] = rand.Next(0, 10);
+                    Massive[i, j] = rand.Next(0, 99);
                 }
             }
 
