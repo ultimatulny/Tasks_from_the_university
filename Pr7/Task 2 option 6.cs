@@ -41,13 +41,8 @@ namespace ProgramMax
         {
 
             Random rand = new Random();
-            int q = 0;
-
-            while (true) // Генерация нечетного числа в диапазоне от 3 до 25
-            {
-                q = rand.Next(2, 25); 
-                if (q % 2 != 0) { break; } 
-            }
+            Console.Write("Введите размерность массива = ");
+            int q = System.Convert.ToInt32(Console.ReadLine());
 
             int[,] Massive = new int[q, q]; 
 
