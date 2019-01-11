@@ -9,22 +9,35 @@ namespace Program
             Console.Write("n= ");
             int n = System.Convert.ToInt32(Console.ReadLine());
             Random rand = new Random();
-            double[,] m = new double[n, n];
-            double[] New = new double[n];
 
-            for (int i = 0; i < n; i++)
+            double[][] m = new double[n][]; // Ступенчатый массив 
+            double[] New = new double[n];
+            for (int i = 0; i < n; i++) // Задание размерности для каждой строки
             {
-                for (int j = 0; j < n; j++)
+                m[i] = new double[n];
+            }
+         
+            int len = 0;
+
+            for (int i = 0; i < n; i++) // Заполнение массива
+            {
+                len = m[i].Length;
+
+                for (int j = 0; j < len; j++)
                 {
-                    m[i,j] = rand.Next(0, 50);
+                    m[i][j] = rand.Next(0, 50);
                 }
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Текущий массив:");
+            Console.WriteLine();
             for (int i = 0; i < n; i++) // Вывод массива
             {
-                for (int j = 0; j < n; j++)
+                len = m[i].Length;
+                for (int j = 0; j < len; j++)
                 {
-                    Console.Write(String.Format("{0,3}", m[i, j]));
+                    Console.Write(m[i][j] + " ");
                 }
                 Console.WriteLine();
             }
@@ -33,20 +46,22 @@ namespace Program
             {
                 for (int i = 0; i < n; i++)
                 {
-                    if (m[j,i] % 2 != 0)
+                    if (m[j][i] % 2 != 0)
                     {
                         New[i] = j;
                     }
-                    
+
                 }
             }
 
             Console.WriteLine();
 
-            for (int i = 0; i < New.Length; i++)
+            for (int i = 0; i < New.Length; i++) // Массив с индексами 
             {
                 Console.Write(New[i] + " ");
             }
+
+
 
         }
     }
